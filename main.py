@@ -41,8 +41,8 @@ def write_to_db(insert,val):
     print(mydb.cursor().rowcount, "record inserted.")
 
 def get_url_data(ApiUrl, ApiKey, URL):
-    params = {'apikey': apikey, 'resource': URL }
-    return requests.get(url, params=params)
+    params = {'apikey': ApiKey, 'resource': ApiUrl }
+    return requests.get(URL, params=params)
 
 def Site_Risk(malicious, malware, phishing):
     if max(malicious, malware, phishing) > 0:
